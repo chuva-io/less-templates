@@ -25,6 +25,7 @@ In all of the examples you can expect the following:
 
 - [README](./mongodb/)
 - [Javascript client code](./mongodb/less/shared/mongodb_client_js/index.js)
+- [Python client code](./mongodb/less/shared/mongodb_client_py/__init__.py)
 
 ## Postgres
 <img src='./postgres/images/postgres.svg' width='128'/>  

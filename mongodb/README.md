@@ -90,3 +90,52 @@ Source Code: [https://github.com/mongodb/node-mongodb-native](https://github.com
     ```shell
     npx @chuva.io/less-cli deploy YOUR_PROJECT_NAME
     ```
+
+---
+
+## Python
+Documentation: [https://pymongo.readthedocs.io/en/stable/](https://pymongo.readthedocs.io/en/stable/)  
+Pypi Package: [https://pypi.org/project/pymongo/](https://pypi.org/project/pymongo/)  
+Source Code: [https://github.com/mongodb/mongo-python-driver](https://github.com/mongodb/mongo-python-driver)  
+
+### Getting started
+1. Create a Python Mongodb client in `/less/shared/mongodb_client_py/index.js`.
+    ```python
+    import os
+    from pymongo import MongoClient
+
+    MONGODB_URI = os.environ.get('MONGODB_URI')
+    MONGODB_DATABASE_NAME = os.environ.get('MONGODB_DATABASE_NAME')
+
+    client = MongoClient(MONGODB_URI)
+    db = client[MONGODB_DATABASE_NAME]
+    collection = db.['my_collection']
+
+    def insert_item(item):
+        post_id = collection.insert_one(item)
+
+    def get_all_items():
+        return collection.find()
+    ```
+
+2. Create a `GET /hello/py` route in `/less/apis/demo/hello/py/get.py` to test.
+    ```python
+    from mongodb_client_py import insert_item, get_all_items
+
+    def process(request, response):
+        # Insert item.
+        insert_item({ 'bar': 'baz' })
+
+        # Get all items.
+        result = get_all_items()
+        
+        # Return HTTP response.
+        response.statusCode = 200
+        response.body = result
+        return response
+    ```
+
+3. Deploy!
+    ```shell
+    npx @chuva.io/less-cli deploy YOUR_PROJECT_NAME
+    ```
