@@ -20,6 +20,12 @@ In all of the examples you can expect the following:
 
 # Integrations
 
+## Mongodb
+<img src='./mongodb/images/mongodb.svg' width='128'/>  
+
+- [README](./mongodb/)
+- [Javascript client code](./mongodb/less/shared/mongodb_client_js/index.js)
+
 ## Postgres
 <img src='./postgres/images/postgres.svg' width='128'/>  
 
