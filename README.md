@@ -20,6 +20,12 @@ In all of the examples you can expect the following:
 
 # Integrations
 
+## Dynamodb
+<img src='./aws_dynamodb/images/aws_dynamodb.svg' width='128'/>  
+
+- [README](./aws_dynamodb/)
+- [Javascript client code](./aws_dynamodb/less/shared/dynamodb_client_js/index.js)
+
 ## Mongodb
 <img src='./mongodb/images/mongodb.svg' width='128'/>  
 
